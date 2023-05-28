@@ -1,0 +1,30 @@
+# agents
+
+## Overview
+
+Agents
+
+### Available Operations
+
+* [get_my_agent](#get_my_agent) - My Agent Details
+
+## get_my_agent
+
+Fetch your agent's details.
+
+### Example Usage
+
+```python
+import spacetraders
+from spacetraders.models import operations
+
+s = spacetraders.SpaceTraders()
+
+
+res = s.agents.get_my_agent(operations.GetMyAgentSecurity(
+    agent_token="YOUR_BEARER_TOKEN_HERE",
+))
+
+if res.get_my_agent_200_application_json_object is not None:
+    # handle response
+```
