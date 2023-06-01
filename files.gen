@@ -4,6 +4,7 @@ src/spacetraders/factions.py
 src/spacetraders/fleet.py
 src/spacetraders/systems.py
 src/spacetraders/sdk.py
+.gitignore
 pylintrc
 setup.py
 src/spacetraders/__init__.py
