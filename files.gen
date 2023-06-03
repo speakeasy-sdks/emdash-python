@@ -1,3 +1,4 @@
+src/spacetraders/sdkconfiguration.py
 src/spacetraders/agents.py
 src/spacetraders/contracts.py
 src/spacetraders/factions.py
