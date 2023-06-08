@@ -21,7 +21,7 @@ from spacetraders.models import operations
 
 s = spacetraders.SpaceTraders(
     security=shared.Security(
-        agent_token="YOUR_BEARER_TOKEN_HERE",
+        agent_token="",
     ),
 )
 
@@ -47,7 +47,7 @@ from spacetraders.models import operations
 
 s = spacetraders.SpaceTraders(
     security=shared.Security(
-        agent_token="YOUR_BEARER_TOKEN_HERE",
+        agent_token="",
     ),
 )
 

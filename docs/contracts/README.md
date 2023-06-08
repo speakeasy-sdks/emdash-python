@@ -29,7 +29,7 @@ req = operations.AcceptContractRequest(
 )
 
 res = s.contracts.accept_contract(req, operations.AcceptContractSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.accept_contract_200_application_json_object is not None:
@@ -58,7 +58,7 @@ req = operations.DeliverContractRequest(
 )
 
 res = s.contracts.deliver_contract(req, operations.DeliverContractSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.deliver_contract_200_application_json_object is not None:
@@ -82,7 +82,7 @@ req = operations.FulfillContractRequest(
 )
 
 res = s.contracts.fulfill_contract(req, operations.FulfillContractSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.fulfill_contract_200_application_json_object is not None:
@@ -106,7 +106,7 @@ req = operations.GetContractRequest(
 )
 
 res = s.contracts.get_contract(req, operations.GetContractSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.get_contract_200_application_json_object is not None:
@@ -131,7 +131,7 @@ req = operations.GetContractsRequest(
 )
 
 res = s.contracts.get_contracts(req, operations.GetContractsSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.get_contracts_200_application_json_object is not None:

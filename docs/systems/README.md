@@ -26,7 +26,7 @@ from spacetraders.models import operations
 
 s = spacetraders.SpaceTraders(
     security=shared.Security(
-        agent_token="YOUR_BEARER_TOKEN_HERE",
+        agent_token="",
     ),
 )
 
@@ -53,7 +53,7 @@ from spacetraders.models import operations
 
 s = spacetraders.SpaceTraders(
     security=shared.Security(
-        agent_token="YOUR_BEARER_TOKEN_HERE",
+        agent_token="",
     ),
 )
 
@@ -80,7 +80,7 @@ from spacetraders.models import operations
 
 s = spacetraders.SpaceTraders(
     security=shared.Security(
-        agent_token="YOUR_BEARER_TOKEN_HERE",
+        agent_token="",
     ),
 )
 
@@ -107,7 +107,7 @@ from spacetraders.models import operations
 
 s = spacetraders.SpaceTraders(
     security=shared.Security(
-        agent_token="YOUR_BEARER_TOKEN_HERE",
+        agent_token="",
     ),
 )
 
@@ -140,7 +140,7 @@ req = operations.GetSystemWaypointsRequest(
 )
 
 res = s.systems.get_system_waypoints(req, operations.GetSystemWaypointsSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.get_system_waypoints_200_application_json_object is not None:
@@ -159,7 +159,7 @@ from spacetraders.models import operations
 
 s = spacetraders.SpaceTraders(
     security=shared.Security(
-        agent_token="YOUR_BEARER_TOKEN_HERE",
+        agent_token="",
     ),
 )
 
@@ -186,7 +186,7 @@ from spacetraders.models import operations
 
 s = spacetraders.SpaceTraders(
     security=shared.Security(
-        agent_token="YOUR_BEARER_TOKEN_HERE",
+        agent_token="",
     ),
 )
 

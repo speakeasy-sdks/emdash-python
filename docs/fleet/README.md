@@ -53,7 +53,7 @@ req = operations.CreateChartRequest(
 )
 
 res = s.fleet.create_chart(req, operations.CreateChartSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.create_chart_201_application_json_object is not None:
@@ -77,7 +77,7 @@ req = operations.CreateShipShipScanRequest(
 )
 
 res = s.fleet.create_ship_ship_scan(req, operations.CreateShipShipScanSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.create_ship_ship_scan_201_application_json_object is not None:
@@ -101,7 +101,7 @@ req = operations.CreateShipSystemScanRequest(
 )
 
 res = s.fleet.create_ship_system_scan(req, operations.CreateShipSystemScanSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.create_ship_system_scan_201_application_json_object is not None:
@@ -125,7 +125,7 @@ req = operations.CreateShipWaypointScanRequest(
 )
 
 res = s.fleet.create_ship_waypoint_scan(req, operations.CreateShipWaypointScanSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.create_ship_waypoint_scan_201_application_json_object is not None:
@@ -151,7 +151,7 @@ req = operations.CreateSurveyRequest(
 )
 
 res = s.fleet.create_survey(req, operations.CreateSurveySecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.create_survey_201_application_json_object is not None:
@@ -177,7 +177,7 @@ req = operations.DockShipRequest(
 )
 
 res = s.fleet.dock_ship(req, operations.DockShipSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.dock_ship_200_response is not None:
@@ -218,7 +218,7 @@ req = operations.ExtractResourcesRequest(
 )
 
 res = s.fleet.extract_resources(req, operations.ExtractResourcesSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.extract_resources_201_application_json_object is not None:
@@ -242,7 +242,7 @@ req = operations.GetMyShipRequest(
 )
 
 res = s.fleet.get_my_ship(req, operations.GetMyShipSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.get_my_ship_200_application_json_object is not None:
@@ -266,7 +266,7 @@ req = operations.GetMyShipCargoRequest(
 )
 
 res = s.fleet.get_my_ship_cargo(req, operations.GetMyShipCargoSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.get_my_ship_cargo_200_application_json_object is not None:
@@ -291,7 +291,7 @@ req = operations.GetMyShipsRequest(
 )
 
 res = s.fleet.get_my_ships(req, operations.GetMyShipsSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.get_my_ships_200_application_json_object is not None:
@@ -319,7 +319,7 @@ req = operations.GetShipCooldownRequest(
 )
 
 res = s.fleet.get_ship_cooldown(req, operations.GetShipCooldownSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.get_ship_cooldown_200_application_json_object is not None:
@@ -343,7 +343,7 @@ req = operations.GetShipNavRequest(
 )
 
 res = s.fleet.get_ship_nav(req, operations.GetShipNavSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.get_ship_nav_200_application_json_object is not None:
@@ -371,7 +371,7 @@ req = operations.JettisonRequest(
 )
 
 res = s.fleet.jettison(req, operations.JettisonSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.jettison_200_application_json_object is not None:
@@ -398,7 +398,7 @@ req = operations.JumpShipRequest(
 )
 
 res = s.fleet.jump_ship(req, operations.JumpShipSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.jump_ship_200_application_json_object is not None:
@@ -429,7 +429,7 @@ req = operations.NavigateShipRequest(
 )
 
 res = s.fleet.navigate_ship(req, operations.NavigateShipSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.navigate_ship_200_application_json_object is not None:
@@ -454,7 +454,7 @@ req = operations.NegotiateContractRequest(
 )
 
 res = s.fleet.negotiate_contract(req, operations.NegotiateContractSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.negotiate_contract_200_response is not None:
@@ -480,7 +480,7 @@ req = operations.OrbitShipRequest(
 )
 
 res = s.fleet.orbit_ship(req, operations.OrbitShipSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.orbit_ship_200_response is not None:
@@ -507,7 +507,7 @@ req = operations.PatchShipNavRequest(
 )
 
 res = s.fleet.patch_ship_nav(req, operations.PatchShipNavSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.patch_ship_nav_200_application_json_object is not None:
@@ -535,7 +535,7 @@ req = operations.PurchaseCargoRequest(
 )
 
 res = s.fleet.purchase_cargo(req, operations.PurchaseCargoSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.purchase_cargo_201_response is not None:
@@ -560,7 +560,7 @@ req = operations.PurchaseShipRequestBody(
 )
 
 res = s.fleet.purchase_ship(req, operations.PurchaseShipSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.purchase_ship_201_application_json_object is not None:
@@ -584,7 +584,7 @@ req = operations.RefuelShipRequest(
 )
 
 res = s.fleet.refuel_ship(req, operations.RefuelShipSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.refuel_ship_200_application_json_object is not None:
@@ -612,7 +612,7 @@ req = operations.SellCargoRequest(
 )
 
 res = s.fleet.sell_cargo(req, operations.SellCargoSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.sell_cargo_201_response is not None:
@@ -639,7 +639,7 @@ req = operations.ShipRefineRequest(
 )
 
 res = s.fleet.ship_refine(req, operations.ShipRefineSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.ship_refine_200_response is not None:
@@ -668,7 +668,7 @@ req = operations.TransferCargoRequest(
 )
 
 res = s.fleet.transfer_cargo(req, operations.TransferCargoSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.transfer_cargo_200_response is not None:
@@ -697,7 +697,7 @@ req = operations.WarpShipRequest(
 )
 
 res = s.fleet.warp_ship(req, operations.WarpShipSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.warp_ship_200_application_json_object is not None:

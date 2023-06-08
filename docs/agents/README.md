@@ -22,7 +22,7 @@ s = spacetraders.SpaceTraders()
 
 
 res = s.agents.get_my_agent(operations.GetMyAgentSecurity(
-    agent_token="YOUR_BEARER_TOKEN_HERE",
+    agent_token="",
 ))
 
 if res.get_my_agent_200_application_json_object is not None:
