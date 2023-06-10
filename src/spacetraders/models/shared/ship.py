@@ -17,10 +17,10 @@ from spacetraders import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class Ship:
     r"""A ship"""
-    
     cargo: shared_shipcargo.ShipCargo = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cargo') }})
     crew: shared_shipcrew.ShipCrew = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('crew') }})
     r"""The ship's crew service and maintain the ship's systems and equipment."""
@@ -41,3 +41,4 @@ class Ship:
     symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('symbol') }})
     r"""The globally unique identifier of the ship in the following format: `[AGENT_SYMBOL]_[HEX_ID]`"""
     
+

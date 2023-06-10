@@ -11,50 +11,61 @@ from spacetraders import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class SellCargoSecurity:
-    
     agent_token: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SellCargoSellCargoRequest:
-    
     symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('symbol') }})
     units: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('units') }})
     
 
+
+
+
 @dataclasses.dataclass
 class SellCargoRequest:
-    
     ship_symbol: str = dataclasses.field(metadata={'path_param': { 'field_name': 'shipSymbol', 'style': 'simple', 'explode': False }})
     request_body: Optional[SellCargoSellCargoRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SellCargoSellCargo201ResponseData:
-    
     agent: shared_agent.Agent = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('agent') }})
     cargo: shared_shipcargo.ShipCargo = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cargo') }})
     transaction: shared_markettransaction.MarketTransaction = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transaction') }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SellCargoSellCargo201Response:
     r"""Created"""
-    
     data: SellCargoSellCargo201ResponseData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
     
 
+
+
+
 @dataclasses.dataclass
 class SellCargoResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     sell_cargo_201_response: Optional[SellCargoSellCargo201Response] = dataclasses.field(default=None)
     r"""Created"""
     
+

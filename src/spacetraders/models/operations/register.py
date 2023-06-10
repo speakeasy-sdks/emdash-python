@@ -22,9 +22,9 @@ class RegisterRequestBodyFaction(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class RegisterRequestBody:
-    
     faction: RegisterRequestBodyFaction = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('faction') }})
     r"""The faction you choose determines your headquarters."""
     symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('symbol') }})
@@ -33,10 +33,12 @@ class RegisterRequestBody:
     r"""Your email address. This is used if you reserved your call sign between resets."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class Register201ApplicationJSONData:
-    
     agent: shared_agent.Agent = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('agent') }})
     contract: shared_contract.Contract = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contract') }})
     faction: shared_faction.Faction = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('faction') }})
@@ -46,20 +48,25 @@ class Register201ApplicationJSONData:
     r"""A Bearer token for accessing secured API endpoints."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class Register201ApplicationJSON:
     r"""OK"""
-    
     data: Register201ApplicationJSONData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
     
 
+
+
+
 @dataclasses.dataclass
 class RegisterResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     register_201_application_json_object: Optional[Register201ApplicationJSON] = dataclasses.field(default=None)
     r"""OK"""
     
+

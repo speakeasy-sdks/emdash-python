@@ -10,43 +10,52 @@ from spacetraders import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class PatchShipNavSecurity:
-    
     agent_token: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class PatchShipNavRequestBody:
-    
     flight_mode: Optional[shared_shipnavflightmode.ShipNavFlightMode] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flightMode'), 'exclude': lambda f: f is None }})
     r"""The ship's set speed when traveling between waypoints or systems."""
     
 
+
+
+
 @dataclasses.dataclass
 class PatchShipNavRequest:
-    
     ship_symbol: str = dataclasses.field(metadata={'path_param': { 'field_name': 'shipSymbol', 'style': 'simple', 'explode': False }})
     r"""The ship symbol"""
     request_body: Optional[PatchShipNavRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class PatchShipNav200ApplicationJSON:
     r"""The updated nav status of the ship."""
-    
     data: shared_shipnav.ShipNav = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
     r"""The navigation information of the ship."""
     
 
+
+
+
 @dataclasses.dataclass
 class PatchShipNavResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     patch_ship_nav_200_application_json_object: Optional[PatchShipNav200ApplicationJSON] = dataclasses.field(default=None)
     r"""The updated nav status of the ship."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

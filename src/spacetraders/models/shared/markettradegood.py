@@ -15,9 +15,9 @@ class MarketTradeGoodSupply(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class MarketTradeGood:
-    
     purchase_price: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('purchasePrice') }})
     r"""The price at which this good can be purchased from the market."""
     sell_price: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sellPrice') }})
@@ -29,3 +29,4 @@ class MarketTradeGood:
     trade_volume: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tradeVolume') }})
     r"""The typical volume flowing through the market for this type of good. The larger the trade volume, the more stable prices will be."""
     
+

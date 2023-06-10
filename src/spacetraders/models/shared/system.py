@@ -10,9 +10,9 @@ from spacetraders import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class System:
-    
     factions: list[shared_systemfaction.SystemFaction] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('factions') }})
     sector_symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sectorSymbol') }})
     symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('symbol') }})
@@ -22,3 +22,4 @@ class System:
     x: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('x') }})
     y: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('y') }})
     
+

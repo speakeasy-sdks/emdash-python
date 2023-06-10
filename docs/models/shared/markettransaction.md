@@ -1,0 +1,15 @@
+# MarketTransaction
+
+
+## Fields
+
+| Field                                                                 | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `price_per_unit`                                                      | *int*                                                                 | :heavy_check_mark:                                                    | The price per unit of the transaction.                                |
+| `ship_symbol`                                                         | *str*                                                                 | :heavy_check_mark:                                                    | The symbol of the ship that made the transaction.                     |
+| `timestamp`                                                           | [date](https://docs.python.org/3/library/datetime.html#date-objects)  | :heavy_check_mark:                                                    | The timestamp of the transaction.                                     |
+| `total_price`                                                         | *int*                                                                 | :heavy_check_mark:                                                    | The total price of the transaction.                                   |
+| `trade_symbol`                                                        | *str*                                                                 | :heavy_check_mark:                                                    | The symbol of the trade good.                                         |
+| `type`                                                                | [MarketTransactionType](../../models/shared/markettransactiontype.md) | :heavy_check_mark:                                                    | The type of transaction.                                              |
+| `units`                                                               | *int*                                                                 | :heavy_check_mark:                                                    | The number of units of the transaction.                               |
+| `waypoint_symbol`                                                     | *str*                                                                 | :heavy_check_mark:                                                    | The symbol of the waypoint where the transaction took place.          |

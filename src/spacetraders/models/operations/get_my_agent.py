@@ -9,26 +9,31 @@ from spacetraders import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetMyAgentSecurity:
-    
     agent_token: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetMyAgent200ApplicationJSON:
     r"""OK"""
-    
     data: shared_agent.Agent = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
     
 
+
+
+
 @dataclasses.dataclass
 class GetMyAgentResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_my_agent_200_application_json_object: Optional[GetMyAgent200ApplicationJSON] = dataclasses.field(default=None)
     r"""OK"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

@@ -11,10 +11,10 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class Cooldown:
     r"""A cooldown is a period of time in which a ship cannot perform certain actions."""
-    
     remaining_seconds: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remainingSeconds') }})
     r"""The remaining duration of the cooldown in seconds"""
     ship_symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('shipSymbol') }})
@@ -24,3 +24,4 @@ class Cooldown:
     expiration: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expiration'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     r"""The date and time when the cooldown expires in ISO 8601 format"""
     
+

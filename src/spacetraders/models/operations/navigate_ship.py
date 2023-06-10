@@ -10,52 +10,63 @@ from spacetraders import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class NavigateShipSecurity:
-    
     agent_token: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class NavigateShipRequestBody:
-    
     waypoint_symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('waypointSymbol') }})
     r"""The target destination."""
     
 
+
+
+
 @dataclasses.dataclass
 class NavigateShipRequest:
-    
     ship_symbol: str = dataclasses.field(metadata={'path_param': { 'field_name': 'shipSymbol', 'style': 'simple', 'explode': False }})
     r"""The ship symbol"""
     request_body: Optional[NavigateShipRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class NavigateShip200ApplicationJSONData:
-    
     fuel: shared_shipfuel.ShipFuel = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fuel') }})
     r"""Details of the ship's fuel tanks including how much fuel was consumed during the last transit or action."""
     nav: shared_shipnav.ShipNav = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nav') }})
     r"""The navigation information of the ship."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class NavigateShip200ApplicationJSON:
     r"""The successful transit information including the route details and changes to ship fuel, supplies, and crew wages paid. The route includes the expected time of arrival."""
-    
     data: NavigateShip200ApplicationJSONData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
     
 
+
+
+
 @dataclasses.dataclass
 class NavigateShipResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     navigate_ship_200_application_json_object: Optional[NavigateShip200ApplicationJSON] = dataclasses.field(default=None)
     r"""The successful transit information including the route details and changes to ship fuel, supplies, and crew wages paid. The route includes the expected time of arrival."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

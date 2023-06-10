@@ -8,9 +8,9 @@ from spacetraders import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ScannedSystem:
-    
     distance: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('distance') }})
     sector_symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sectorSymbol') }})
     symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('symbol') }})
@@ -19,3 +19,4 @@ class ScannedSystem:
     x: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('x') }})
     y: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('y') }})
     
+

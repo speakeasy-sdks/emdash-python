@@ -9,40 +9,49 @@ from spacetraders import utils
 from typing import Any, Optional
 
 
+
 @dataclasses.dataclass
 class NegotiateContractSecurity:
-    
     agent_token: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
+
 @dataclasses.dataclass
 class NegotiateContractRequest:
-    
     ship_symbol: str = dataclasses.field(metadata={'path_param': { 'field_name': 'shipSymbol', 'style': 'simple', 'explode': False }})
     request_body: Optional[Any] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class NegotiateContractNegotiateContract200ResponseData:
-    
     contract: shared_contract.Contract = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contract') }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class NegotiateContractNegotiateContract200Response:
     r"""Created"""
-    
     data: NegotiateContractNegotiateContract200ResponseData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
     
 
+
+
+
 @dataclasses.dataclass
 class NegotiateContractResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     negotiate_contract_200_response: Optional[NegotiateContractNegotiateContract200Response] = dataclasses.field(default=None)
     r"""Created"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

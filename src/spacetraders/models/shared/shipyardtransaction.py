@@ -10,9 +10,9 @@ from spacetraders import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ShipyardTransaction:
-    
     agent_symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('agentSymbol') }})
     r"""The symbol of the agent that made the transaction."""
     price: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('price') }})
@@ -24,3 +24,4 @@ class ShipyardTransaction:
     waypoint_symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('waypointSymbol') }})
     r"""The symbol of the waypoint where the transaction took place."""
     
+

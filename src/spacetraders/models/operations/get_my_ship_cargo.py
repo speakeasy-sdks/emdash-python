@@ -9,33 +9,40 @@ from spacetraders import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetMyShipCargoSecurity:
-    
     agent_token: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
+
 @dataclasses.dataclass
 class GetMyShipCargoRequest:
-    
     ship_symbol: str = dataclasses.field(metadata={'path_param': { 'field_name': 'shipSymbol', 'style': 'simple', 'explode': False }})
     r"""The symbol of the ship"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetMyShipCargo200ApplicationJSON:
     r"""OK"""
-    
     data: shared_shipcargo.ShipCargo = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
     
 
+
+
+
 @dataclasses.dataclass
 class GetMyShipCargoResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_my_ship_cargo_200_application_json_object: Optional[GetMyShipCargo200ApplicationJSON] = dataclasses.field(default=None)
     r"""OK"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

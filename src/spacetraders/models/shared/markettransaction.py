@@ -16,9 +16,9 @@ class MarketTransactionType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class MarketTransaction:
-    
     price_per_unit: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pricePerUnit') }})
     r"""The price per unit of the transaction."""
     ship_symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('shipSymbol') }})
@@ -36,3 +36,4 @@ class MarketTransaction:
     waypoint_symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('waypointSymbol') }})
     r"""The symbol of the waypoint where the transaction took place."""
     
+

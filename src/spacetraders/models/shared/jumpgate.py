@@ -9,9 +9,9 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class JumpGate:
-    
     connected_systems: list[shared_connectedsystem.ConnectedSystem] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connectedSystems') }})
     r"""The systems within range of the gate that have a corresponding gate."""
     jump_range: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('jumpRange') }})
@@ -19,3 +19,4 @@ class JumpGate:
     faction_symbol: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('factionSymbol'), 'exclude': lambda f: f is None }})
     r"""The symbol of the faction that owns the gate."""
     
+

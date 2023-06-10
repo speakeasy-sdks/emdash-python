@@ -70,9 +70,9 @@ class WaypointTraitSymbol(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class WaypointTrait:
-    
     description: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
     r"""A description of the trait."""
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
@@ -80,3 +80,4 @@ class WaypointTrait:
     symbol: WaypointTraitSymbol = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('symbol') }})
     r"""The unique identifier of the trait."""
     
+

@@ -11,9 +11,9 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class Market:
-    
     exchange: list[shared_tradegood.TradeGood] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('exchange') }})
     r"""The list of goods that are bought and sold between agents at this market."""
     exports: list[shared_tradegood.TradeGood] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('exports') }})
@@ -27,3 +27,4 @@ class Market:
     transactions: Optional[list[shared_markettransaction.MarketTransaction]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transactions'), 'exclude': lambda f: f is None }})
     r"""The list of recent transactions at this market. Visible only when a ship is present at the market."""
     
+

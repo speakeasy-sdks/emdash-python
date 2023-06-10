@@ -7,10 +7,10 @@ from spacetraders import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ShipCargoItem:
     r"""The type of cargo item and the number of units."""
-    
     description: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
     r"""The description of the cargo item type."""
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
@@ -20,3 +20,4 @@ class ShipCargoItem:
     units: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('units') }})
     r"""The number of units of the cargo item."""
     
+

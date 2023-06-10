@@ -9,9 +9,9 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ConnectedSystem:
-    
     distance: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('distance') }})
     sector_symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sectorSymbol') }})
     symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('symbol') }})
@@ -22,3 +22,4 @@ class ConnectedSystem:
     faction_symbol: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('factionSymbol'), 'exclude': lambda f: f is None }})
     r"""The symbol of the faction that owns the connected jump gate in the system."""
     
+

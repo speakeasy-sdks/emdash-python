@@ -9,27 +9,32 @@ from spacetraders import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetFactionRequest:
-    
     faction_symbol: str = dataclasses.field(metadata={'path_param': { 'field_name': 'factionSymbol', 'style': 'simple', 'explode': False }})
     r"""The faction symbol"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetFaction200ApplicationJSON:
     r"""OK"""
-    
     data: shared_faction.Faction = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
     
 
+
+
+
 @dataclasses.dataclass
 class GetFactionResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_faction_200_application_json_object: Optional[GetFaction200ApplicationJSON] = dataclasses.field(default=None)
     r"""OK"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

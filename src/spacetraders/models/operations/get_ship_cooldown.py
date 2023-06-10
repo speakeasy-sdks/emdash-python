@@ -9,33 +9,40 @@ from spacetraders import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetShipCooldownSecurity:
-    
     agent_token: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
+
 @dataclasses.dataclass
 class GetShipCooldownRequest:
-    
     ship_symbol: str = dataclasses.field(metadata={'path_param': { 'field_name': 'shipSymbol', 'style': 'simple', 'explode': False }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetShipCooldown200ApplicationJSON:
     r"""OK"""
-    
     data: shared_cooldown.Cooldown = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
     r"""A cooldown is a period of time in which a ship cannot perform certain actions."""
     
 
+
+
+
 @dataclasses.dataclass
 class GetShipCooldownResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_ship_cooldown_200_application_json_object: Optional[GetShipCooldown200ApplicationJSON] = dataclasses.field(default=None)
     r"""OK"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

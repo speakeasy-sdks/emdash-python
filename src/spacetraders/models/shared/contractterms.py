@@ -13,11 +13,12 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ContractTerms:
-    
     deadline: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deadline'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""The deadline for the contract."""
     payment: shared_contractpayment.ContractPayment = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payment') }})
     deliver: Optional[list[shared_contractdelivergood.ContractDeliverGood]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deliver'), 'exclude': lambda f: f is None }})
     
+

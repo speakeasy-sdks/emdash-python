@@ -10,43 +10,52 @@ from spacetraders import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class CreateChartSecurity:
-    
     agent_token: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
+
 @dataclasses.dataclass
 class CreateChartRequest:
-    
     ship_symbol: str = dataclasses.field(metadata={'path_param': { 'field_name': 'shipSymbol', 'style': 'simple', 'explode': False }})
     r"""The symbol of the ship"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateChart201ApplicationJSONData:
-    
     chart: shared_chart.Chart = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('chart') }})
     r"""The chart of a system or waypoint, which makes the location visible to other agents."""
     waypoint: shared_waypoint.Waypoint = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('waypoint') }})
     r"""A waypoint is a location that ships can travel to such as a Planet, Moon or Space Station."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateChart201ApplicationJSON:
     r"""Created"""
-    
     data: CreateChart201ApplicationJSONData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
     
 
+
+
+
 @dataclasses.dataclass
 class CreateChartResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     create_chart_201_application_json_object: Optional[CreateChart201ApplicationJSON] = dataclasses.field(default=None)
     r"""Created"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

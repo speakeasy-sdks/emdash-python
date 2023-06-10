@@ -18,9 +18,9 @@ class ContractType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class Contract:
-    
     accepted: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accepted') }})
     r"""Whether the contract has been accepted by the agent"""
     expiration: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expiration'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
@@ -35,3 +35,4 @@ class Contract:
     deadline_to_accept: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deadlineToAccept'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     r"""The time at which the contract is no longer available to be accepted"""
     
+

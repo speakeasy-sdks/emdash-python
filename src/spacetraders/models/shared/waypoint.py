@@ -13,10 +13,10 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class Waypoint:
     r"""A waypoint is a location that ships can travel to such as a Planet, Moon or Space Station."""
-    
     orbitals: list[shared_waypointorbital.WaypointOrbital] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('orbitals') }})
     symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('symbol') }})
     system_symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('systemSymbol') }})
@@ -30,3 +30,4 @@ class Waypoint:
     r"""The chart of a system or waypoint, which makes the location visible to other agents."""
     faction: Optional[shared_waypointfaction.WaypointFaction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('faction'), 'exclude': lambda f: f is None }})
     
+

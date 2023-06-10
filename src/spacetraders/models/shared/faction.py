@@ -8,9 +8,9 @@ from spacetraders import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class Faction:
-    
     description: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
     headquarters: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('headquarters') }})
     is_recruiting: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isRecruiting') }})
@@ -19,3 +19,4 @@ class Faction:
     symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('symbol') }})
     traits: list[shared_factiontrait.FactionTrait] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('traits') }})
     
+

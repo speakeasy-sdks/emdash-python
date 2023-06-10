@@ -11,16 +11,18 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ShipyardShipTypes:
-    
     type: Optional[shared_shiptype.ShipType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class Shipyard:
-    
     ship_types: list[ShipyardShipTypes] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('shipTypes') }})
     r"""The list of ship types available for purchase at this shipyard."""
     symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('symbol') }})
@@ -30,3 +32,4 @@ class Shipyard:
     transactions: Optional[list[shared_shipyardtransaction.ShipyardTransaction]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transactions'), 'exclude': lambda f: f is None }})
     r"""The list of recent transactions at this shipyard."""
     
+

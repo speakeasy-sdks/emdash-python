@@ -8,9 +8,9 @@ from spacetraders import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ShipCargo:
-    
     capacity: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('capacity') }})
     r"""The max number of items that can be stored in the cargo hold."""
     inventory: list[shared_shipcargoitem.ShipCargoItem] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('inventory') }})
@@ -18,3 +18,4 @@ class ShipCargo:
     units: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('units') }})
     r"""The number of items currently stored in the cargo hold."""
     
+

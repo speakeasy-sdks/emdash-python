@@ -43,10 +43,10 @@ class ShipMountSymbol(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ShipMount:
     r"""A mount is installed on the exterier of a ship."""
-    
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     requirements: shared_shiprequirements.ShipRequirements = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requirements') }})
     r"""The requirements for installation on a ship"""
@@ -55,3 +55,4 @@ class ShipMount:
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
     strength: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('strength'), 'exclude': lambda f: f is None }})
     
+

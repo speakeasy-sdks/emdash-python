@@ -7,10 +7,10 @@ from spacetraders import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ContractDeliverGood:
     r"""The details of a delivery contract. Includes the type of good, units needed, and the destination."""
-    
     destination_symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('destinationSymbol') }})
     r"""The destination where goods need to be delivered."""
     trade_symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tradeSymbol') }})
@@ -20,3 +20,4 @@ class ContractDeliverGood:
     units_required: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unitsRequired') }})
     r"""The number of units that need to be delivered on this contract."""
     
+

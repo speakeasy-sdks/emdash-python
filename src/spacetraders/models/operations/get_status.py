@@ -9,70 +9,84 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetStatus200ApplicationJSONAnnouncements:
-    
     body: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('body') }})
     title: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('title') }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetStatus200ApplicationJSONLeaderboardsMostCredits:
-    
     agent_symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('agentSymbol') }})
     credits: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('credits') }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetStatus200ApplicationJSONLeaderboardsMostSubmittedCharts:
-    
     agent_symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('agentSymbol') }})
     chart_count: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('chartCount') }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetStatus200ApplicationJSONLeaderboards:
-    
     most_credits: list[GetStatus200ApplicationJSONLeaderboardsMostCredits] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mostCredits') }})
     most_submitted_charts: list[GetStatus200ApplicationJSONLeaderboardsMostSubmittedCharts] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mostSubmittedCharts') }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetStatus200ApplicationJSONLinks:
-    
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetStatus200ApplicationJSONServerResets:
-    
     frequency: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('frequency') }})
     r"""How often we intend to reset the game server."""
     next: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next') }})
     r"""The date and time when the game server will reset."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetStatus200ApplicationJSONStats:
-    
     agents: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('agents') }})
     ships: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ships') }})
     systems: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('systems') }})
     waypoints: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('waypoints') }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetStatus200ApplicationJSON:
     r"""OK"""
-    
     announcements: list[GetStatus200ApplicationJSONAnnouncements] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('announcements') }})
     description: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
     leaderboards: GetStatus200ApplicationJSONLeaderboards = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('leaderboards') }})
@@ -87,12 +101,15 @@ class GetStatus200ApplicationJSON:
     r"""The current version of the API."""
     
 
+
+
+
 @dataclasses.dataclass
 class GetStatusResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_status_200_application_json_object: Optional[GetStatus200ApplicationJSON] = dataclasses.field(default=None)
     r"""OK"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

@@ -10,10 +10,10 @@ from spacetraders import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ShipNav:
     r"""The navigation information of the ship."""
-    
     flight_mode: shared_shipnavflightmode.ShipNavFlightMode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flightMode') }})
     r"""The ship's set speed when traveling between waypoints or systems."""
     route: shared_shipnavroute.ShipNavRoute = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('route') }})
@@ -25,3 +25,4 @@ class ShipNav:
     waypoint_symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('waypointSymbol') }})
     r"""The waypoint symbol of the ship's current location, or if the ship is in-transit, the waypoint symbol of the ship's destination."""
     
+

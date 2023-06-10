@@ -10,42 +10,50 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ScannedShipEngine:
     r"""The engine of the ship."""
-    
     symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('symbol') }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ScannedShipFrame:
     r"""The frame of the ship."""
-    
     symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('symbol') }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ScannedShipMounts:
     r"""A mount on the ship."""
-    
     symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('symbol') }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ScannedShipReactor:
     r"""The reactor of the ship."""
-    
     symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('symbol') }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ScannedShip:
     r"""The ship that was scanned. Details include information about the ship that could be detected by the scanner."""
-    
     engine: ScannedShipEngine = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('engine') }})
     r"""The engine of the ship."""
     nav: shared_shipnav.ShipNav = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nav') }})
@@ -60,3 +68,4 @@ class ScannedShip:
     reactor: Optional[ScannedShipReactor] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reactor'), 'exclude': lambda f: f is None }})
     r"""The reactor of the ship."""
     
+

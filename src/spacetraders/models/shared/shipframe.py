@@ -27,10 +27,10 @@ class ShipFrameSymbol(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ShipFrame:
     r"""The frame of the ship. The frame determines the number of modules and mounting points of the ship, as well as base fuel capacity. As the condition of the frame takes more wear, the ship will become more sluggish and less maneuverable."""
-    
     description: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
     fuel_capacity: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fuelCapacity') }})
     module_slots: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('moduleSlots') }})
@@ -42,3 +42,4 @@ class ShipFrame:
     condition: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('condition'), 'exclude': lambda f: f is None }})
     r"""Condition is a range of 0 to 100 where 0 is completely worn out and 100 is brand new."""
     
+

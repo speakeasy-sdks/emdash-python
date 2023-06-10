@@ -8,10 +8,10 @@ from spacetraders import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ShipNavRouteWaypoint:
     r"""The destination or departure of a ships nav route."""
-    
     symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('symbol') }})
     system_symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('systemSymbol') }})
     type: shared_waypointtype.WaypointType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
@@ -19,3 +19,4 @@ class ShipNavRouteWaypoint:
     x: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('x') }})
     y: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('y') }})
     
+

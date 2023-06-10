@@ -12,45 +12,54 @@ from spacetraders import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class PurchaseShipSecurity:
-    
     agent_token: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class PurchaseShipRequestBody:
-    
     ship_type: shared_shiptype.ShipType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('shipType') }})
     waypoint_symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('waypointSymbol') }})
     r"""The symbol of the waypoint you want to purchase the ship at."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class PurchaseShip201ApplicationJSONData:
-    
     agent: shared_agent.Agent = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('agent') }})
     ship: shared_ship.Ship = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ship') }})
     r"""A ship"""
     transaction: shared_shipyardtransaction.ShipyardTransaction = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transaction') }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class PurchaseShip201ApplicationJSON:
     r"""Created"""
-    
     data: PurchaseShip201ApplicationJSONData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
     
 
+
+
+
 @dataclasses.dataclass
 class PurchaseShipResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     purchase_ship_201_application_json_object: Optional[PurchaseShip201ApplicationJSON] = dataclasses.field(default=None)
     r"""Created"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

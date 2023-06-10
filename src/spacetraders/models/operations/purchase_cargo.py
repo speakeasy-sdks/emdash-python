@@ -11,50 +11,61 @@ from spacetraders import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class PurchaseCargoSecurity:
-    
     agent_token: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class PurchaseCargoPurchaseCargoRequest:
-    
     symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('symbol') }})
     units: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('units') }})
     
 
+
+
+
 @dataclasses.dataclass
 class PurchaseCargoRequest:
-    
     ship_symbol: str = dataclasses.field(metadata={'path_param': { 'field_name': 'shipSymbol', 'style': 'simple', 'explode': False }})
     request_body: Optional[PurchaseCargoPurchaseCargoRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class PurchaseCargoPurchaseCargo201ResponseData:
-    
     agent: shared_agent.Agent = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('agent') }})
     cargo: shared_shipcargo.ShipCargo = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cargo') }})
     transaction: shared_markettransaction.MarketTransaction = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transaction') }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class PurchaseCargoPurchaseCargo201Response:
     r"""Created"""
-    
     data: PurchaseCargoPurchaseCargo201ResponseData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
     
 
+
+
+
 @dataclasses.dataclass
 class PurchaseCargoResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     purchase_cargo_201_response: Optional[PurchaseCargoPurchaseCargo201Response] = dataclasses.field(default=None)
     r"""Created"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

@@ -7,9 +7,9 @@ from spacetraders import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class Agent:
-    
     account_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accountId') }})
     credits: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('credits') }})
     r"""The number of credits the agent has available. Credits can be negative if funds have been overdrawn."""
@@ -19,3 +19,4 @@ class Agent:
     r"""The faction the agent started with."""
     symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('symbol') }})
     
+

@@ -13,10 +13,10 @@ class ShipCrewRotation(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ShipCrew:
     r"""The ship's crew service and maintain the ship's systems and equipment."""
-    
     capacity: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('capacity') }})
     r"""The maximum number of crew members the ship can support."""
     current: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('current') }})
@@ -30,3 +30,4 @@ class ShipCrew:
     wages: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('wages') }})
     r"""The amount of credits per crew member paid per hour. Wages are paid when a ship docks at a civilized waypoint."""
     
+

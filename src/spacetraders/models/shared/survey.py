@@ -18,10 +18,10 @@ class SurveySize(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class Survey:
     r"""A resource survey of a waypoint, detailing a specific extraction location and the types of resources that can be found there."""
-    
     deposits: list[shared_surveydeposit.SurveyDeposit] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deposits') }})
     r"""A list of deposits that can be found at this location."""
     expiration: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expiration'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
@@ -33,3 +33,4 @@ class Survey:
     symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('symbol') }})
     r"""The symbol of the waypoint that this survey is for."""
     
+

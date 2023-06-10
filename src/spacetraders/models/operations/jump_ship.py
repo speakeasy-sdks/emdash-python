@@ -10,51 +10,62 @@ from spacetraders import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class JumpShipSecurity:
-    
     agent_token: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class JumpShipRequestBody:
-    
     system_symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('systemSymbol') }})
     r"""The system symbol to jump to."""
     
 
+
+
+
 @dataclasses.dataclass
 class JumpShipRequest:
-    
     ship_symbol: str = dataclasses.field(metadata={'path_param': { 'field_name': 'shipSymbol', 'style': 'simple', 'explode': False }})
     request_body: Optional[JumpShipRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class JumpShip200ApplicationJSONData:
-    
     cooldown: shared_cooldown.Cooldown = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cooldown') }})
     r"""A cooldown is a period of time in which a ship cannot perform certain actions."""
     nav: Optional[shared_shipnav.ShipNav] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nav'), 'exclude': lambda f: f is None }})
     r"""The navigation information of the ship."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class JumpShip200ApplicationJSON:
     r"""OK"""
-    
     data: JumpShip200ApplicationJSONData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
     
 
+
+
+
 @dataclasses.dataclass
 class JumpShipResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     jump_ship_200_application_json_object: Optional[JumpShip200ApplicationJSON] = dataclasses.field(default=None)
     r"""OK"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

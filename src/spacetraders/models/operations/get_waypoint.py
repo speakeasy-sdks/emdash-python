@@ -9,30 +9,35 @@ from spacetraders import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetWaypointRequest:
-    
     system_symbol: str = dataclasses.field(metadata={'path_param': { 'field_name': 'systemSymbol', 'style': 'simple', 'explode': False }})
     r"""The system symbol"""
     waypoint_symbol: str = dataclasses.field(metadata={'path_param': { 'field_name': 'waypointSymbol', 'style': 'simple', 'explode': False }})
     r"""The waypoint symbol"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetWaypoint200ApplicationJSON:
     r"""OK"""
-    
     data: shared_waypoint.Waypoint = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
     r"""A waypoint is a location that ships can travel to such as a Planet, Moon or Space Station."""
     
 
+
+
+
 @dataclasses.dataclass
 class GetWaypointResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_waypoint_200_application_json_object: Optional[GetWaypoint200ApplicationJSON] = dataclasses.field(default=None)
     r"""OK"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

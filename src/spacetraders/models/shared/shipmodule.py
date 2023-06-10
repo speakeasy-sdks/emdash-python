@@ -29,10 +29,10 @@ class ShipModuleSymbol(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ShipModule:
     r"""A module can be installed in a ship and provides a set of capabilities such as storage space or quarters for crew. Module installations are permanent."""
-    
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     requirements: shared_shiprequirements.ShipRequirements = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requirements') }})
     r"""The requirements for installation on a ship"""
@@ -41,3 +41,4 @@ class ShipModule:
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
     range: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('range'), 'exclude': lambda f: f is None }})
     
+

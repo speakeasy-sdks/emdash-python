@@ -7,10 +7,11 @@ from spacetraders import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SurveyDeposit:
     r"""A surveyed deposit of a mineral or resource available for extraction."""
-    
     symbol: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('symbol') }})
     r"""The symbol of the deposit."""
     
+

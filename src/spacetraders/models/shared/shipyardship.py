@@ -14,9 +14,9 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ShipyardShip:
-    
     description: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
     engine: shared_shipengine.ShipEngine = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('engine') }})
     r"""The engine determines how quickly a ship travels between waypoints."""
@@ -30,3 +30,4 @@ class ShipyardShip:
     r"""The reactor of the ship. The reactor is responsible for powering the ship's systems and weapons."""
     type: Optional[shared_shiptype.ShipType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     
+

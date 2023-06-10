@@ -9,41 +9,50 @@ from spacetraders import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class DockShipSecurity:
-    
     agent_token: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
+
 @dataclasses.dataclass
 class DockShipRequest:
-    
     ship_symbol: str = dataclasses.field(metadata={'path_param': { 'field_name': 'shipSymbol', 'style': 'simple', 'explode': False }})
     r"""The symbol of the ship"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class DockShipDockShip200ResponseData:
-    
     nav: shared_shipnav.ShipNav = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nav') }})
     r"""The navigation information of the ship."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class DockShipDockShip200Response:
     r"""The ship has successfully docked at it's current location."""
-    
     data: DockShipDockShip200ResponseData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
     
 
+
+
+
 @dataclasses.dataclass
 class DockShipResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     dock_ship_200_response: Optional[DockShipDockShip200Response] = dataclasses.field(default=None)
     r"""The ship has successfully docked at it's current location."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

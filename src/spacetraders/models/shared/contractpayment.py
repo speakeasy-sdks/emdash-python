@@ -7,11 +7,12 @@ from spacetraders import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ContractPayment:
-    
     on_accepted: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onAccepted') }})
     r"""The amount of credits received up front for accepting the contract."""
     on_fulfilled: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onFulfilled') }})
     r"""The amount of credits received when the contract is fulfilled."""
     
+

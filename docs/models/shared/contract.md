@@ -1,0 +1,15 @@
+# Contract
+
+
+## Fields
+
+| Field                                                                | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `accepted`                                                           | *bool*                                                               | :heavy_check_mark:                                                   | Whether the contract has been accepted by the agent                  |
+| `deadline_to_accept`                                                 | [date](https://docs.python.org/3/library/datetime.html#date-objects) | :heavy_minus_sign:                                                   | The time at which the contract is no longer available to be accepted |
+| `expiration`                                                         | [date](https://docs.python.org/3/library/datetime.html#date-objects) | :heavy_check_mark:                                                   | Deprecated in favor of deadlineToAccept                              |
+| `faction_symbol`                                                     | *str*                                                                | :heavy_check_mark:                                                   | The symbol of the faction that this contract is for.                 |
+| `fulfilled`                                                          | *bool*                                                               | :heavy_check_mark:                                                   | Whether the contract has been fulfilled                              |
+| `id`                                                                 | *str*                                                                | :heavy_check_mark:                                                   | N/A                                                                  |
+| `terms`                                                              | [ContractTerms](../../models/shared/contractterms.md)                | :heavy_check_mark:                                                   | N/A                                                                  |
+| `type`                                                               | [ContractType](../../models/shared/contracttype.md)                  | :heavy_check_mark:                                                   | N/A                                                                  |

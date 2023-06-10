@@ -11,10 +11,10 @@ from spacetraders import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ShipNavRoute:
     r"""The routing information for the ship's most recent transit or current location."""
-    
     arrival: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('arrival'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""The date time of the ship's arrival. If the ship is in-transit, this is the expected time of arrival."""
     departure: shared_shipnavroutewaypoint.ShipNavRouteWaypoint = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('departure') }})
@@ -24,3 +24,4 @@ class ShipNavRoute:
     destination: shared_shipnavroutewaypoint.ShipNavRouteWaypoint = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('destination') }})
     r"""The destination or departure of a ships nav route."""
     
+

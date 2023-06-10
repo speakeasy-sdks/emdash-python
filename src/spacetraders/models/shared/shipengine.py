@@ -16,10 +16,10 @@ class ShipEngineSymbol(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ShipEngine:
     r"""The engine determines how quickly a ship travels between waypoints."""
-    
     description: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     requirements: shared_shiprequirements.ShipRequirements = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requirements') }})
@@ -29,3 +29,4 @@ class ShipEngine:
     condition: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('condition'), 'exclude': lambda f: f is None }})
     r"""Condition is a range of 0 to 100 where 0 is completely worn out and 100 is brand new."""
     
+

@@ -17,10 +17,10 @@ class ShipReactorSymbol(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ShipReactor:
     r"""The reactor of the ship. The reactor is responsible for powering the ship's systems and weapons."""
-    
     description: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     power_output: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('powerOutput') }})
@@ -30,3 +30,4 @@ class ShipReactor:
     condition: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('condition'), 'exclude': lambda f: f is None }})
     r"""Condition is a range of 0 to 100 where 0 is completely worn out and 100 is brand new."""
     
+

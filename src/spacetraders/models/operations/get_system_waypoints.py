@@ -10,15 +10,17 @@ from spacetraders import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetSystemWaypointsSecurity:
-    
     agent_token: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
+
 @dataclasses.dataclass
 class GetSystemWaypointsRequest:
-    
     system_symbol: str = dataclasses.field(metadata={'path_param': { 'field_name': 'systemSymbol', 'style': 'simple', 'explode': False }})
     r"""The system symbol"""
     limit: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'limit', 'style': 'form', 'explode': True }})
@@ -27,21 +29,26 @@ class GetSystemWaypointsRequest:
     r"""What entry offset to request"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetSystemWaypoints200ApplicationJSON:
     r"""OK"""
-    
     data: list[shared_waypoint.Waypoint] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
     meta: shared_meta.Meta = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meta') }})
     
 
+
+
+
 @dataclasses.dataclass
 class GetSystemWaypointsResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_system_waypoints_200_application_json_object: Optional[GetSystemWaypoints200ApplicationJSON] = dataclasses.field(default=None)
     r"""OK"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+
